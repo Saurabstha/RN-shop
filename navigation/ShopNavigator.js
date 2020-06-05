@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
+import CartScreen from '../screens/shop/CartScreen';
+
 
 import Colors from '../constants/Colors';
 
@@ -37,6 +39,16 @@ function ShopNavigator() {
         //   headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
          
         // }}
+        />
+
+        <Stack.Screen name="Cart" 
+        component={CartScreen} 
+        options={{
+          headerStyle: {
+            backgroundColor: Platform.OS === 'android' ? Colors.primary : ''
+          },
+          headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
+        }}
         />
       </Stack.Navigator>
     </NavigationContainer>
